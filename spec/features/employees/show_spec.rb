@@ -78,7 +78,7 @@ RSpec.describe "Employee Show Page" do
       end
     end
 
-    xit 'has a list of employees who share same tickets' do 
+    it 'has a list of employees who share same tickets' do 
       visit "/employees/#{@employee_1.id}" 
 
       within(".employees_with_same_tickets") do 

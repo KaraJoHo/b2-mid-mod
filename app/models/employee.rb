@@ -10,7 +10,6 @@ class Employee < ApplicationRecord
   end
 
   def self.shared_tickets(employee)
-    # require 'pry'; binding.pry
      Employee.joins(:employee_tickets).where(employee_tickets: {ticket_id: employee.tickets.ids}).distinct
   end
 end
