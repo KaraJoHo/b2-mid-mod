@@ -1,4 +1,6 @@
 class Ticket < ApplicationRecord 
-  belongs_to :employee
+  has_many :employee_tickets 
+  has_many :employees, through: :employee_tickets
+  
   validates_presence_of :subject, :age
 end

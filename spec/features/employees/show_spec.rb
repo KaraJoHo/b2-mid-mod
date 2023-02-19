@@ -12,11 +12,10 @@ RSpec.describe "Employee Show Page" do
 
     @ticket_1 = Ticket.create!(subject: "A task", age: 2)
     @ticket_2 = Ticket.create!(subject: "Another task", age: 1)
-
     @ticket_3 = Ticket.create!(subject: "A hard task", age: 3)
     @ticket_4 = Ticket.create!(subject: "Another hard task", age: 2)
-
     @ticket_5 = Ticket.create!(subject: "An IT task", age: 2)
+    @ticket_6 = Ticket.create!(subject: "An IT task", age: 2)
 
     @employee_ticket_1 = EmployeeTicket.create!(employee_id: @employee_1.id, ticket_id: @ticket_1.id)
     @employee_ticket_2 = EmployeeTicket.create!(employee_id: @employee_1.id, ticket_id: @ticket_2.id)
@@ -66,13 +65,13 @@ RSpec.describe "Employee Show Page" do
       end
 
       within(".add_existing_ticket_form") do 
-        fill_in("Ticket ID", with: @ticket_5.id)
+        fill_in("Ticket ID", with: @ticket_6.id)
         click_button("Submit")
         expect(current_path).to eq("/employees/#{@employee_1.id}")
       end
 
       within(".tickets_oldest_to_youngest") do 
-        expect(page).to have_content(@ticket_5.subject)
+        expect(page).to have_content(@ticket_6.subject)
       end
 
 

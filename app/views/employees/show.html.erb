@@ -13,3 +13,11 @@
 <div class = "oldest_ticket" >
   <h3> Oldest Ticket: <%= @employee.order_tickets_oldest_youngest.first.subject %></h3>
 </div>
+
+<div class = "add_existing_ticket_form" >
+  <%= form_with url: "/employee_tickets/#{@employee.id}", method: :post, local: true do |form| %>
+    <%= form.label :ticket_id, "Ticket ID" %>
+    <%= form.number_field :ticket_id %>
+    <%= form.button "Submit" %>
+  <% end %>
+</div>
