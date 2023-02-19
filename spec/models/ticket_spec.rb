@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Ticket do 
   describe 'relationship' do 
-    it {should belong_to :employee}
+    it {should have_many :employees}
   end
 
   describe 'validations' do 
