@@ -1,0 +1,15 @@
+<div class = "details" >
+  <h2>Employee Name: <%= @employee.name %></h2>
+  <h3> Employee Department: <%= @employee.department.name %> </h3>
+</div>
+
+<div class = "tickets_oldest_to_youngest">
+  <h3> Employees Tickets </h3>
+    <% @employee.order_tickets_oldest_youngest.each do |ticket| %> 
+      <p> <%= ticket.subject %> </p><br>
+    <% end %>
+</div>
+
+<div class = "oldest_ticket" >
+  <h3> Oldest Ticket: <%= @employee.order_tickets_oldest_youngest.first.subject %></h3>
+</div>
